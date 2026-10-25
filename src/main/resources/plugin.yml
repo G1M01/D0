@@ -1,0 +1,14 @@
+name: SentinelAC
+version: 1.0.0
+main: dev.sentinelac.SentinelACPlugin
+description: Configurable Minecraft server security foundation
+author: SentinelAC
+commands:
+  sentinel:
+    description: SentinelAC administration
+    usage: /sentinel <status|reload|ban|unban>
+    aliases: [sac]
+permissions:
+  sentinel.admin:
+    description: Manage SentinelAC and its bans
+    default: op

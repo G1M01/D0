@@ -1,0 +1,42 @@
+storage:
+  enabled: true
+  file: evidence.db
+  queue_capacity: 4096
+
+modules:
+  connection:
+    enabled: true
+    max_global_connections: 500
+    max_connections_per_ip: 5
+    max_tracked_ips: 10000
+    reservation_timeout_seconds: 30
+    handshake_validation: true
+    burst:
+      window_seconds: 10
+      max_per_ip: 8
+      max_global: 60
+  anticheat:
+    enabled: false
+    checks:
+      fly: { enabled: false, threshold: 8 }
+      speed: { enabled: false, threshold: 8 }
+      nofall: { enabled: false, threshold: 8 }
+      reach: { enabled: false, threshold: 3.2 }
+      killaura: { enabled: false, threshold: 12 }
+      autoclicker: { enabled: false, threshold: 18 }
+      velocity: { enabled: false, threshold: 8 }
+      scaffold: { enabled: false, threshold: 8 }
+      fastbreak: { enabled: false, threshold: 8 }
+      protocol_exploits: { enabled: false, threshold: 1 }
+    enforcement:
+      action: LOG
+      permanent_ban: false
+      confirmed_violations: 5
+  proxy_detection:
+    enabled: false
+    action: LOG
+    api_url: ""
+    api_key: ""
+    timeout_millis: 2000
+    cache_minutes: 60
+    allowlist: []
